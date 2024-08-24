@@ -12,12 +12,12 @@ const firebaseConfig = {
   measurementId: "G-36T37J0Z7W"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+let app, db, analytics;
 
-let analytics;
 if (typeof window !== 'undefined') {
-  analytics = getAnalytics(app); // Initialize analytics only on the client-side
+  app = initializeApp(firebaseConfig); // Initialize Firebase app
+  db = getFirestore(app); // Initialize Firestore
+  analytics = getAnalytics(app); // Initialize Analytics (only on the client-side)
 }
 
 export { db };
