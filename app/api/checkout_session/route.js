@@ -18,16 +18,17 @@ export async function POST(req) {
     let planName;
 
     if (planType === 'pro') {
-      amount = 10;
+      amount = 1000; // Stripe expects amount in cents
       planName = 'Pro subscription';
     } else if (planType === 'basic') {
-      amount = 5;
+      amount = 500; // Stripe expects amount in cents
       planName = 'Basic subscription';
     } else {
       throw new Error('Invalid plan type');
     }
 
-    const { origin } = new URL(req.headers.get('Referer') || ''); // Fallback to empty string if Referer is not provided
+    const referer = req.headers.get('Referer');
+    const origin = referer ? new URL(referer).origin : 'https://your-default-origin.com'; // Use default origin as fallback
 
     const params = {
       mode: 'subscription',
@@ -39,7 +40,7 @@ export async function POST(req) {
             product_data: {
               name: planName,
             },
-            unit_amount: formatAmountForStripe(amount, 'usd'),
+            unit_amount: amount,
             recurring: {
               interval: 'month',
               interval_count: 1,
