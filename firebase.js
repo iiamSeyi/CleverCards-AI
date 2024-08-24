@@ -22,4 +22,4 @@ if (typeof window !== 'undefined') {
   analytics = getAnalytics(app); // Analytics should only be initialized in the browser
 }
 
-export { db };
+export { db, analytics };

@@ -1,10 +1,12 @@
-'use client'
+'use client';
+
 import Image from "next/image";
 import getStripe from "@/utils/get-stripe";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Grid, Box, AppBar, Button, Container, Toolbar, Typography, CssBaseline } from "@mui/material";
 import Head from "next/head";
 import { useEffect } from "react";
+import { analytics } from "@/utils/firebase";  // Import analytics
 
 export default function Home() {
 
@@ -14,7 +16,7 @@ export default function Home() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          origin: 'http://localhost:3000',
+          
         },
         body: JSON.stringify({ planType }), 
       });
@@ -40,7 +42,10 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Any necessary setup can be done here
+    if (analytics) {
+      // Example: Log an event to Firebase Analytics
+      console.log('Firebase Analytics is initialized');
+    }
   }, []);
 
   return (
@@ -52,8 +57,8 @@ export default function Home() {
         width: '100vw',
         padding: 0,
         margin: 0,
-        background: 'linear-gradient(135deg, #121212 0%, #1c1c1c 100%)', // Dark background gradient
-        color: '#e1bee7', // Light purple text
+        background: 'linear-gradient(135deg, #121212 0%, #1c1c1c 100%)',
+        color: '#e1bee7',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -94,8 +99,8 @@ export default function Home() {
           margin: '2rem',
           padding: '2rem',
           textAlign: 'center',
-          boxShadow: '0px 4px 30px rgba(106, 27, 154, 0.6)', // Darker purple shadow
-          width: 'calc(100% - 4rem)', // Ensures the Box takes up full width minus margin
+          boxShadow: '0px 4px 30px rgba(106, 27, 154, 0.6)',
+          width: 'calc(100% - 4rem)',
         }}
       >
         <Typography variant="h2" gutterBottom sx={{ fontWeight: 'bold', fontSize: '2.5rem', color: '#e1bee7' }}>
@@ -157,9 +162,9 @@ export default function Home() {
           <Grid item xs={12} md={4}>
             <Box sx={{
               p: 4,
-              backgroundColor: '#1c1c1c', // Dark background for cards
+              backgroundColor: '#1c1c1c',
               borderRadius: '15px',
-              boxShadow: '0px 4px 30px rgba(106, 27, 154, 0.6)', // Darker purple shadow
+              boxShadow: '0px 4px 30px rgba(106, 27, 154, 0.6)',
               border: '1px solid rgba(106, 27, 154, 0.4)',
             }}>
               <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', fontSize: '1.5rem', color: '#e1bee7' }}>
