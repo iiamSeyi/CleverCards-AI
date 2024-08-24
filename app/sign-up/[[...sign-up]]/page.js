@@ -27,7 +27,7 @@ export default function SignUpPage() {
             <AppBar position="static" sx={{ backgroundColor: '#6a1b9a', boxShadow: 'none' }}>
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold', fontSize: '1.5rem' }}>
-                        Flashcard SaaS
+                        CleverCards AI
                     </Typography>
                     <Link href="/sign-in" passHref>
                         <Button color="inherit">Login</Button>
