@@ -1,12 +1,12 @@
 'use client';
 
-import Image from "next/image";
+
 import getStripe from "@/utils/get-stripe";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Grid, Box, AppBar, Button, Container, Toolbar, Typography, CssBaseline } from "@mui/material";
 import Head from "next/head";
 import { useEffect } from "react";
-import { analytics } from "@/utils/firebase";  // Import analytics
+import { analytics } from "@/firebase";  // Import analytics
 
 export default function Home() {
 
