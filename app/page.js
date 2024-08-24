@@ -173,7 +173,7 @@ export default function Home() {
                 1 GB storage <br />
                 Basic support
               </Typography>
-              <Button variant="contained" sx={{ mt: 2, px: 4, py: 1.5, background: '#7b1fa2', color: 'white', fontSize: '1.1rem' }} href="/sign-in">
+              <Button variant="contained" sx={{ mt: 2, px: 4, py: 1.5, background: '#7b1fa2', color: 'white', fontSize: '1.1rem' }} href="/generate">
                 Get Started
               </Button>
             </Box>

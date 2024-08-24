@@ -1,8 +1,6 @@
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import { getAnalytics } from "firebase/analytics";
-import {gerFirebase} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDkilDZkw82m9TzGpJGI4O8EXvwuCexWB4",
@@ -16,5 +14,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const analytics = getAnalytics(app);
-export {db};
+
+let analytics;
+if (typeof window !== 'undefined') {
+  analytics = getAnalytics(app); // Initialize analytics only on the client-side
+}
+
+export { db };
