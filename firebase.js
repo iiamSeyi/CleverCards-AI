@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
-import { getAnalytics } from "firebase/analytics";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDkilDZkw82m9TzGpJGI4O8EXvwuCexWB4",
@@ -14,12 +14,11 @@ const firebaseConfig = {
 
 let app;
 let db;
-let analytics;
+
 
 if (typeof window !== 'undefined') {
   app = initializeApp(firebaseConfig);
   db = getFirestore(app);
-  analytics = getAnalytics(app); // Analytics should only be initialized in the browser
 }
 
-export { db, analytics };
+export { db };

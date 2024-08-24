@@ -6,7 +6,7 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Grid, Box, AppBar, Button, Container, Toolbar, Typography, CssBaseline } from "@mui/material";
 import Head from "next/head";
 import { useEffect } from "react";
-import { analytics } from "@/firebase";  // Import analytics
+
 
 export default function Home() {
 
@@ -41,12 +41,7 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    if (analytics) {
-      // Example: Log an event to Firebase Analytics
-      console.log('Firebase Analytics is initialized');
-    }
-  }, []);
+
 
   return (
     <Container
