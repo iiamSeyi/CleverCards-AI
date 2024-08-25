@@ -57,7 +57,7 @@ export default function Flashcards() {
                 padding: 0,
                 margin: 0,
                 background: 'linear-gradient(135deg, #121212 0%, #1c1c1c 100%)', // Dark background gradient
-                color: '#e1bee7', // Light purple text
+                color: '#e1bee7', // Light purple 
                 fontFamily: 'Roboto, sans-serif',
             }}
         >
