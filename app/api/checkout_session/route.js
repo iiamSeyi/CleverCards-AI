@@ -28,7 +28,7 @@ export async function POST(req) {
     }
 
     const referer = req.headers.get('Referer');
-    const origin = referer ? new URL(referer).origin : 'https://your-default-origin.com'; // Use default origin as fallback
+    const origin = referer ? new URL(referer).origin : 'https://clever-cards-ai.vercel.app'; // Use default origin as fallback
 
     const params = {
       mode: 'subscription',

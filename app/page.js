@@ -5,7 +5,7 @@ import getStripe from "@/utils/get-stripe";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Grid, Box, AppBar, Button, Container, Toolbar, Typography, CssBaseline } from "@mui/material";
 import Head from "next/head";
-import { useEffect } from "react";
+
 
 
 export default function Home() {
